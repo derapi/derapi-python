@@ -1,0 +1,61 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "derapi"
+dynamic = ["version"]
+requires-python = ">=3.8"
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "httpx>=0.20.0,<0.28.0",
+  "attrs>=21.3.0",
+  "python-dateutil==2.8.0"
+]
+readme = "README.md"
+
+[project.optional-dependencies]
+dev = [
+  "pyright==v1.1.388",
+]
+
+[tool.hatch.envs.hatch-test]
+features = ["dev"]
+
+[tool.hatch.build.targets.sdist]
+packages = ["derapi"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["derapi"]
+
+[tool.hatch.version]
+source = "vcs"
+fallback-version = "0.0.0"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["F", "I", "UP"]
+
+[tool.hatch.envs.typing]
+template = "hatch-test"
+
+scripts.check = "pyright {args}"
+
+[tool.pyright]
+typeCheckingMode = "strict"
+include = ["tests/"]
