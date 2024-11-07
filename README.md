@@ -3,6 +3,8 @@
 The `derapi` Python SDK provides access to the Derapi API for Python
 applications -- fully typed with async support.
 
+The SDK closely mirrors our API, so the [API documentation](https://docs.derapi.com) is a helpful reference when using it in your project.
+
 [![PyPI - Version](https://img.shields.io/pypi/v/derapi.svg)](https://pypi.org/project/derapi)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/derapi.svg)](https://pypi.org/project/derapi)
 
