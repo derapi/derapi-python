@@ -24,7 +24,7 @@ pip install derapi
 
 ## Usage
 
-Client initialization:
+#### Client initialization
 
 ```python
 import os
@@ -41,18 +41,18 @@ def init_client() -> AuthenticatedClient:
     token_resp.raise_for_status()
     token = token_resp.json()["access_token"]
     return AuthenticatedClient(
-        base_url="https//api.derapi.com",
+        base_url="https://api.derapi.com",
         raise_on_unexpected_status=True,
         token=token,
     )
 ```
 
-Usage:
+#### Example: Retrieve a list of [Sites](https://docs.derapi.com/reference/listsites) synchronously, iterating through all pages of results automatically
 
 ```python
 ...
 
-from derapi.api import list_sites
+from derapi.api.sites import list_sites
 
 client = init_client()
 
