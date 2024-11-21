@@ -9,10 +9,10 @@ T = TypeVar("T", bound="SolaredgeJoinConfig")
 class SolaredgeJoinConfig:
     """
     Attributes:
-        vendor (Literal['solaredge']):
+        vendor (Literal['solaredge']):  Default: 'solaredge'.
     """
 
-    vendor: Literal["solaredge"]
+    vendor: Literal["solaredge"] = "solaredge"
 
     def to_dict(self) -> Dict[str, Any]:
         vendor = self.vendor

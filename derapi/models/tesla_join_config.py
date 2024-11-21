@@ -14,12 +14,12 @@ T = TypeVar("T", bound="TeslaJoinConfig")
 class TeslaJoinConfig:
     """
     Attributes:
-        vendor (Literal['tesla']):
+        vendor (Literal['tesla']):  Default: 'tesla'.
         credentials (Union['StoredCredentialsReference', 'TelsaJoinConfigInlineCredentials']):
     """
 
-    vendor: Literal["tesla"]
     credentials: Union["StoredCredentialsReference", "TelsaJoinConfigInlineCredentials"]
+    vendor: Literal["tesla"] = "tesla"
 
     def to_dict(self) -> Dict[str, Any]:
         from ..models.telsa_join_config_inline_credentials import TelsaJoinConfigInlineCredentials

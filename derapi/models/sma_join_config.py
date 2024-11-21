@@ -14,12 +14,12 @@ T = TypeVar("T", bound="SMAJoinConfig")
 class SMAJoinConfig:
     """
     Attributes:
-        vendor (Literal['sma']):
+        vendor (Literal['sma']):  Default: 'sma'.
         credentials (Union['SMAJoinConfigInlineCredentials', 'StoredCredentialsReference']):
     """
 
-    vendor: Literal["sma"]
     credentials: Union["SMAJoinConfigInlineCredentials", "StoredCredentialsReference"]
+    vendor: Literal["sma"] = "sma"
 
     def to_dict(self) -> Dict[str, Any]:
         from ..models.sma_join_config_inline_credentials import SMAJoinConfigInlineCredentials

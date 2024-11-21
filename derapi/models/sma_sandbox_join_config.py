@@ -14,12 +14,12 @@ T = TypeVar("T", bound="SMASandboxJoinConfig")
 class SMASandboxJoinConfig:
     """
     Attributes:
-        vendor (Literal['smasbox']):
+        vendor (Literal['smasbox']):  Default: 'smasbox'.
         credentials (Union['SMASandboxJoinConfigInlineCredentials', 'StoredCredentialsReference']):
     """
 
-    vendor: Literal["smasbox"]
     credentials: Union["SMASandboxJoinConfigInlineCredentials", "StoredCredentialsReference"]
+    vendor: Literal["smasbox"] = "smasbox"
 
     def to_dict(self) -> Dict[str, Any]:
         from ..models.sma_sandbox_join_config_inline_credentials import SMASandboxJoinConfigInlineCredentials

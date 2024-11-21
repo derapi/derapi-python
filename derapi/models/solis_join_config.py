@@ -9,10 +9,10 @@ T = TypeVar("T", bound="SolisJoinConfig")
 class SolisJoinConfig:
     """
     Attributes:
-        vendor (Literal['solis']):
+        vendor (Literal['solis']):  Default: 'solis'.
     """
 
-    vendor: Literal["solis"]
+    vendor: Literal["solis"] = "solis"
 
     def to_dict(self) -> Dict[str, Any]:
         vendor = self.vendor

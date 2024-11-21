@@ -14,12 +14,12 @@ T = TypeVar("T", bound="EnphaseJoinConfig")
 class EnphaseJoinConfig:
     """
     Attributes:
-        vendor (Literal['enphase']):
+        vendor (Literal['enphase']):  Default: 'enphase'.
         credentials (Union['EnphaseJoinConfigInlineCredentials', 'StoredCredentialsReference']):
     """
 
-    vendor: Literal["enphase"]
     credentials: Union["EnphaseJoinConfigInlineCredentials", "StoredCredentialsReference"]
+    vendor: Literal["enphase"] = "enphase"
 
     def to_dict(self) -> Dict[str, Any]:
         from ..models.enphase_join_config_inline_credentials import EnphaseJoinConfigInlineCredentials

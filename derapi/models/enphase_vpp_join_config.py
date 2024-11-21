@@ -15,16 +15,16 @@ T = TypeVar("T", bound="EnphaseVPPJoinConfig")
 class EnphaseVPPJoinConfig:
     """
     Attributes:
-        vendor (Literal['enphasevpp']):
+        vendor (Literal['enphasevpp']):  Default: 'enphasevpp'.
         credentials (Union['EnphaseVPPJoinConfigInlineCredentials', 'StoredCredentialsReference']):
         partner_app_credentials (Union['EnphaseJoinConfigInlineCredentials', 'StoredCredentialsReference']):
         program_id (str):
     """
 
-    vendor: Literal["enphasevpp"]
     credentials: Union["EnphaseVPPJoinConfigInlineCredentials", "StoredCredentialsReference"]
     partner_app_credentials: Union["EnphaseJoinConfigInlineCredentials", "StoredCredentialsReference"]
     program_id: str
+    vendor: Literal["enphasevpp"] = "enphasevpp"
 
     def to_dict(self) -> Dict[str, Any]:
         from ..models.enphase_join_config_inline_credentials import EnphaseJoinConfigInlineCredentials
